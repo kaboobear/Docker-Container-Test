@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Docker Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 25px;
+    }
+
+    *{
+      outline: none !important;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    form{
+      width: 370px;
+      padding: 15px;
+      border-radius: 23px;
+      background: #eee;
+      display: flex;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 300;
+    }
+
+    .text-input {
+      padding: 15px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font-weight: 300;
+      transition: .2s;
+      margin-right: 15px;
+    }
+
+    .text-input:focus::placeholder {
+      opacity: 0;
+    }
+
+    .btn {
+      padding: 15px;
+      text-align: center;
+      max-width: 150px;
+      width: 100%;
+      border-radius: 20px;
+      border: none;
+      background: #32a852;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .items-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: 300;
+      margin-bottom: 15px;
+      margin-right: 0;
+      padding-right: 0;
+      padding-left: 5px;
+    }
+
+    .items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      max-width: 370px;
+      width: 100%;
+      padding: 15px 18px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="post" action="/item/add">
+    <input class="text-input" type="text" name="name" placeholder="Title">
+    <input class="btn" type="submit" value="Add">
+  </form>
+  <h4 class="items-title">Items:</h4>
+  <ul class="items">
+    <% items.forEach(function(item) { %>
+    <li class="item">
+      <%= item.name %>
+    </li>
+    <% }); %>
+  </ul>
+</body>
+
+</html>
